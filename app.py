@@ -60,10 +60,6 @@ try:
 except Exception:
     pass
 
-# Niceties
-st.caption("This app was auto-generated. You can tailor the UI (sidebar inputs, tabs, etc.) later.")
-st.divider()
-
 # === Cell 1 ===
 # 1. Install Streamlit dan pyngrok
 
