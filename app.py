@@ -4,7 +4,6 @@
 import streamlit as st
 
 st.set_page_config(page_title="Notebook App", layout="wide")
-st.title("📊 Dashboard (Converted from Notebook)")
 
 # ---- Display helpers to make notebook-style output appear in Streamlit ----
 import types
