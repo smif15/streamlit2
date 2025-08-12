@@ -67,22 +67,16 @@ st.divider()
 
 # === Cell 1 ===
 # 1. Install Streamlit dan pyngrok
-# !pip install streamlit pyngrok --quiet
-# !pip install openpyxl
-# !pip install cairosvg
 
 
 # === Cell 2 ===
-from google.colab import drive
 import pandas as pd
 import os
 import pickle
 
 # 1. Mount Google Drive
-drive.mount('/content/drive')
 
 # 2. Pastikan path benar
-folder_path = "/content/drive/MyDrive/Sem 7/Kodingan Krispi/Dashboard/File"
 if not os.path.exists(folder_path):
     raise FileNotFoundError(f"❌ Folder tidak ditemukan: {folder_path}")
 
@@ -136,14 +130,11 @@ else:
 
 
 # === Cell 3 ===
-from google.colab import drive
 import os
 
 # 1. Mount Google Drive
-drive.mount('/content/drive')
 
 # 2. Pastikan folder ada
-folder_path = "/content/drive/MyDrive/Sem 7/Kodingan Krispi/Dashboard/Barang"
 if not os.path.exists(folder_path):
     raise FileNotFoundError(f"❌ Folder tidak ditemukan: {folder_path}")
 
@@ -151,7 +142,6 @@ print("✅ Google Drive terhubung, siap dibaca Streamlit.")
 
 
 # === Cell 4 ===
-# %%writefile /content/app.py
 import streamlit as st
 import pandas as pd
 import pickle
@@ -842,38 +832,4 @@ st.markdown("""
     Dibuat oleh <b>Hasan Bahtiar Habibi</b> © 2025
 </div>
 """, unsafe_allow_html=True)
-
-
-# === Cell 5 ===
-# Ganti `YOUR_AUTHTOKEN_HERE` dengan authtoken dari ngrok dashboard kamu
-# !ngrok config add-authtoken 310QvFRzCsyCbqNFUJIBq1BIkca_56pYWnryHcGjcNzArmhb6
-
-
-# === Cell 6 ===
-# 3. Jalankan Streamlit dan buat tunnel dengan ngrok
-from pyngrok import ngrok
-import threading
-import time
-
-# Jalankan Streamlit di background thread
-def run():
-#     !streamlit run app.py
-
-thread = threading.Thread(target=run)
-thread.start()
-
-# Tunggu Streamlit ready
-time.sleep(5)
-
-# Buat tunnel ngrok ke port 8501
-public_url = ngrok.connect(8501)
-print(f"✅ Streamlit app is live at:\n{public_url}")
-
-
-# === Cell 7 ===
-ngrok.kill()
-
-
-# === Cell 8 ===
-print("teST")
 
