@@ -1,14 +1,6 @@
-calendar
-datetime
 google
-locale
 matplotlib
-os
 pandas
-pickle
 plotly
 pyngrok
 streamlit
-streamlit>=1.34
-threading
-time
